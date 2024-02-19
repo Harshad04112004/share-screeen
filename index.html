@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>screen sharing</title>
+    <style>
+        #video{
+           width: auto;
+           height: 200px;
+           border: 3px solid rgb(0, 33, 26) ;
+           border-radius: 10px ;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button id="start">screen share</button>
+        <br><br>
+        <div class="vid">
+            <video id="video" autoplay></video>
+        </div>
+    </div>
+    <script>
+        start.onclick = async () =>{
+            const screen = await navigator.mediaDevices.getDisplayMedia({video:true});
+            video.srcObject = screen ;
+        }
+            </script>
+</body>
+</html>
